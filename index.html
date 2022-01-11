@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+     <style> 
+         body {
+            padding: 50px 100px;
+            background-color: antiquewhite;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: rgb(5, 172, 255);
+            font-style: normal;
+            color: rgb(251, 254, 255);
+        }
+
+        #container {
+            text-align: center;
+            background-color: aquamarine;
+            padding: 50px;
+        }
+
+        .input-div {
+            display: inline-block;
+        }
+
+        .inp {
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            width: 250px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 24px;
+
+        }
+
+        .NIzGle {
+            height: 15px;
+            font-size: 12px;
+            padding: 1px 3px 1.5px 3px;
+            color: #fff;
+            background-color: #f97000;
+            float: left;
+            margin: 2px 8px 0 0;
+            border-radius: 2px;
+        }
+        .container{
+            background-color: white;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <h1>TEMPERATURE CONVERTER</h1>
+    <div id="container">
+        <div class="input-div">
+            <label>Calsius</label><br>
+            <input type="number" value="0" id="cel" class="inp">
+        </div>
+        <div class="input-div">
+            <label>Fahrenheit</label><br>
+            <input type="number" value="32" id="fah" class="inp">
+        </div>
+    </div>
+    <div jsname="MV4Buc" class="NIzGle">Formula</div>
+    (0<b>°C</b> × 9/5) + 32 = 32<b>°F</b><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <footer class="container">
+        <p class="float-end"></p>
+        <p>© 2022–2023 V-coder, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer>
+
+    <!-- javascript -->
+
+ <script>
+        var cel = document.getElementById("cel");
+        var fah = document.getElementById("fah");
+
+        cel.addEventListener('input', function () {
+            let c = this.value;
+            let f = (c * 9 / 5) + 32;
+            if (!Number.isInteger(f)) {
+                f = f.toFixed(4);
+            }
+            fah.value = f;
+        });
+
+        fah.addEventListener('input', function () {
+            let f = this.value;
+            let c = (f - 32) * 5 / 9;
+            if (!Number.isInteger(c)) {
+                c = c.toFixed(4);
+            }
+            cel.value = c;
+        }); 
+
+
+    </script>
+</body>
+
+</html>
